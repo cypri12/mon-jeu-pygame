@@ -9,8 +9,8 @@ def index():
 
 @app.route('/run-script')
 def run_script():
-    # Exécuter le script Python
-    result = subprocess.run(['python3', 'text.py'], capture_output=True, text=True)
+    # Exécuter le script test.py
+    result = subprocess.run(['python3', 'test.py'], capture_output=True, text=True)
     return f"<pre>{result.stdout}</pre>"
 
 if __name__ == '__main__':
