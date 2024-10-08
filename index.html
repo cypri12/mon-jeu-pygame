@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exécuter Script Python</title>
 </head>
 <body>
-    
+    <h1>Exécuter le script Python test.py</h1>
+    <button onclick="runPythonScript()">Exécuter le script</button>
+    <div id="output"></div>
+
+    <script>
+        function runPythonScript() {
+            fetch('/run-script')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('output').innerHTML = data;
+                });
+        }
+    </script>
 </body>
 </html>
